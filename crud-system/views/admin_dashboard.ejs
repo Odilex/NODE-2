@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="card-title">Admin Dashboard</h1>
+        <p class="card-text">Welcome, <%= user.username %>! From here, you can manage both products and users.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6 mb-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">Products</h2>
+        <p class="card-text">View, add, edit, and delete products in the system.</p>
+        <div class="alert alert-info">
+          <strong>Total Products:</strong> <%= stats.products %>
+        </div>
+        <div class="mt-auto">
+          <a href="/admin/products" class="btn btn-primary">Manage Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 mb-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">Users</h2>
+        <p class="card-text">View, add, edit, and delete users in the system.</p>
+        <div class="alert alert-info">
+          <strong>Total Users:</strong> <%= stats.users %>
+        </div>
+        <div class="mt-auto">
+          <a href="/admin/users" class="btn btn-primary">Manage Users</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-md-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">Quick Actions</h2>
+        <div class="row">
+          <div class="col-md-3 mb-2">
+            <a href="/admin/products/add" class="btn btn-success w-100">
+              <i class="bi bi-plus-circle"></i> Add Product
+            </a>
+          </div>
+          <div class="col-md-3 mb-2">
+            <a href="/admin/users/add" class="btn btn-success w-100">
+              <i class="bi bi-person-plus"></i> Add User
+            </a>
+          </div>
+          <div class="col-md-3 mb-2">
+            <a href="/admin/products" class="btn btn-info w-100">
+              <i class="bi bi-box"></i> View Products
+            </a>
+          </div>
+          <div class="col-md-3 mb-2">
+            <a href="/admin/users" class="btn btn-info w-100">
+              <i class="bi bi-people"></i> View Users
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

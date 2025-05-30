@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0"><%= title %></h2>
+      </div>
+      <div class="card-body">
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% } %>
+        
+        <form action="<%= action %>" method="POST">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="<%= userData.username || '' %>" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" <%= typeof isEdit === 'undefined' || !isEdit ? 'required' : '' %>>
+            <% if (typeof isEdit !== 'undefined' && isEdit) { %>
+              <div class="form-text">Leave blank to keep current password.</div>
+            <% } %>
+          </div>
+          
+          <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <select class="form-select" id="role" name="role" required>
+              <option value="student" <%= (userData.role === 'student') ? 'selected' : '' %>>Student</option>
+              <option value="admin" <%= (userData.role === 'admin') ? 'selected' : '' %>>Admin</option>
+            </select>
+          </div>
+          
+          <div class="d-flex justify-content-between">
+            <a href="javascript:history.back()" class="btn btn-secondary">
+              <i class="bi bi-arrow-left"></i> Back
+            </a>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save"></i> Save User
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

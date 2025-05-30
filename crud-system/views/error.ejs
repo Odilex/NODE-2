@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow">
+          <div class="card-header bg-danger text-white text-center">
+            <h2>Error</h2>
+          </div>
+          <div class="card-body text-center">
+            <h3><%= message %></h3>
+            <p>Status: <%= error.status %></p>
+            <% if (process.env.NODE_ENV === 'development' && error.stack) { %>
+              <div class="mt-4">
+                <h4>Stack Trace:</h4>
+                <pre class="bg-light p-3 text-start"><%= error.stack %></pre>
+              </div>
+            <% } %>
+            <div class="mt-4">
+              <a href="/" class="btn btn-primary">Go Home</a>
+              <button class="btn btn-secondary" onclick="history.back()">Go Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

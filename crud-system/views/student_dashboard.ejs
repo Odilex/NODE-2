@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="card-title">Welcome, <%= user.username %>!</h1>
+        <p class="card-text">This is your student dashboard. From here, you can manage products.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">Products</h2>
+        <p class="card-text">View, add, edit, and delete products in the system.</p>
+        <div class="mt-auto">
+          <a href="/student/products" class="btn btn-primary">Manage Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">Account</h2>
+        <p class="card-text">Your account details:</p>
+        <ul>
+          <li><strong>Username:</strong> <%= user.username %></li>
+          <li><strong>Role:</strong> <%= user.role %></li>
+        </ul>
+        <div class="mt-auto">
+          <a href="/logout" class="btn btn-outline-danger">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
